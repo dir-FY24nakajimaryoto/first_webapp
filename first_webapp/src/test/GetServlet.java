@@ -21,14 +21,13 @@ public class GetServlet extends HttpServlet {
      */
     public GetServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    request.setCharacterEncoding("UTF-8");
+//	    request.setCharacterEncoding("UTF-8");
 	    
 	    // request.getParameterは全部Stringになる
 	    String q = request.getParameter("q");
@@ -37,7 +36,7 @@ public class GetServlet extends HttpServlet {
 	    request.setAttribute("q", q);
 	    
 	    // req, resなどは「暗黙のオブジェクト」
-	    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/session_a.jsp");
+	    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/get_result.jsp");
 	    rd.forward(request, response);
 	}
 
